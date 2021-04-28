@@ -1,12 +1,12 @@
-BINDIR=$(VIRTUAL_ENV)/bin
+RUN=poetry run
 
 default: run
 
 .PHONY: init
 init:
 	poetry install -E devtools --no-root
-	$(BINDIR)/pre-commit install
-	$(BINDIR)/pre-commit install-hooks
+	$(RUN) pre-commit install
+	$(RUN) pre-commit install-hooks
 	make format check test
 
 .PHONY: clean
@@ -15,35 +15,35 @@ clean:
 
 .PHONY: run
 run:
-	$(BINDIR)/uvicorn app:app
+	$(RUN) uvicorn app:app
 
 .PHONY: dev
 dev:
-	$(BINDIR)/uvicorn app:app --reload
+	$(RUN) uvicorn app:app --reload
 
 .PHONY: test
 test:
-	$(BINDIR)/pytest
+	$(RUN) pytest
 
 .PHONY: cov
 cov:
-	$(BINDIR)/pytest --cov
+	$(RUN) pytest --cov
 
 .PHONY: cov-html
 cov-html:
-	$(BINDIR)/pytest --cov --cov-report=html
+	$(RUN) pytest --cov --cov-report=html
 
 .PHONY: flake8
 flake8:
-	$(BINDIR)/flake8
+	$(RUN) flake8
 
 .PHONY: mypy
 mypy:
-	$(BINDIR)/mypy app
+	$(RUN) mypy app
 
 .PHONY: check
 check: flake8 mypy
 
 .PHONY: format
 format:
-	$(BINDIR)/pre-commit run -a
+	$(RUN) pre-commit run -a
