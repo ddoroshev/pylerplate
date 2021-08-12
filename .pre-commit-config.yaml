@@ -4,7 +4,7 @@ default_language_version:
   python: python3.9
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.4.0
+    rev: v4.0.1
     hooks:
       - id: trailing-whitespace
 
@@ -15,11 +15,11 @@ repos:
         args: ['-r', '--in-place', '--remove-all-unused-imports']
 
   - repo: https://github.com/pre-commit/mirrors-isort
-    rev: v5.8.0
+    rev: v5.9.3
     hooks:
       - id: isort
 
   - repo: https://github.com/ambv/black
-    rev: 21.4b2
+    rev: 21.7b0
     hooks:
       - id: black

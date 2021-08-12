@@ -41,7 +41,6 @@ coverage.xml
 .scrapy
 docs/_build/
 target/
-.python-version
 celerybeat-schedule
 *.sage.py
 .spyderproject
