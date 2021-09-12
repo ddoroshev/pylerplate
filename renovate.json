@@ -1,5 +1,10 @@
 {
   "extends": [
     "config:base"
+  ],
+  "baseBranches": [
+    "master",
+    "base",
+    "fastapi"
   ]
 }
