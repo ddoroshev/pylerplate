@@ -1137,7 +1137,7 @@ devtools = ["isort", "autoflake", "pre-commit", "ptipython"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "6844060bf4fb2065165bb434e17bcead061f9998a4f457dd233c0887fe2120bb"
+content-hash = "cd212d973e7cddf262de593a3d71e360da1e3bdf2f44ac2c0b69ead85a633170"
 
 [metadata.files]
 aiofiles = [
