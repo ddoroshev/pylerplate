@@ -95,7 +95,6 @@ mypy-extensions = ">=0.4.3"
 pathspec = ">=0.9.0"
 platformdirs = ">=2"
 tomli = {version = ">=1.1.0", markers = "python_full_version < \"3.11.0a7\""}
-typing-extensions = {version = ">=3.10.0.0", markers = "python_version < \"3.10\""}
 
 [package.extras]
 colorama = ["colorama (>=0.4.3)"]
@@ -868,8 +867,8 @@ devtools = ["isort", "autoflake", "pre-commit", "ptipython"]
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.9"
-content-hash = "1f272083798b6a36b3eb4cee20b205c8ce8716429b6435db1d75e34dac9c36a7"
+python-versions = "^3.10"
+content-hash = "97c8a9b4250e548d2d93cef0942318fe3709ec00fa7913a9efddb27780c867e3"
 
 [metadata.files]
 appdirs = [
