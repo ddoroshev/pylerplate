@@ -8,9 +8,9 @@ COPY . /app/
 
 FROM ghcr.io/ddoroshev/pylerplate:base-runtime-3.11.4-slim as runtime
 
-RUN pip install setuptools
-
 COPY --from=compile /venv /venv
 COPY --from=compile /app /app
+
+RUN pip install setuptools
 
 CMD ["make", "test"]
