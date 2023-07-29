@@ -18,8 +18,8 @@ async def read_item(item_id: int) -> Item:
 
 
 async def buggy_view_1() -> Item:
-    return Item(item_id="a")
+    return Item(item_id="a")  # type: ignore
 
 
 async def buggy_view_2() -> Item:
-    return Item(item_id=1 / 0)
+    return Item(item_id=1 / 0)  # type: ignore
