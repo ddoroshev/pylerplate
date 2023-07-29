@@ -2,7 +2,7 @@ FROM ghcr.io/ddoroshev/pylerplate:base-compile-3.11.4-slim as compile
 
 COPY poetry.lock pyproject.toml /app/
 
-RUN poetry install --no-root --without=dev
+RUN poetry install --no-root --only main
 
 COPY . /app/
 
