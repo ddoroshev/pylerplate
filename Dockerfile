@@ -1,4 +1,4 @@
-FROM ghcr.io/ddoroshev/pylerplate:base-compile-3.11.4-slim as compile
+FROM ghcr.io/ddoroshev/pylerplate:base-compile-3.11.4 as compile
 
 COPY poetry.lock pyproject.toml /app/
 
@@ -6,7 +6,7 @@ RUN poetry install --no-root --only main
 
 COPY . /app/
 
-FROM ghcr.io/ddoroshev/pylerplate:base-runtime-3.11.4-slim as runtime
+FROM ghcr.io/ddoroshev/pylerplate:base-runtime-3.11.4 as runtime
 
 COPY --from=compile /venv /venv
 COPY --from=compile /app /app
