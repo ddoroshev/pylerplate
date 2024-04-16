@@ -4,6 +4,11 @@
     "config:base",
     ":enablePreCommit"
   ],
+  "baseBranches": [
+      "master",
+      "fastapi"
+    ]
+  },
   "packageRules": [
     {
       "matchPackagePatterns": [
