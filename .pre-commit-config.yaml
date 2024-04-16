@@ -3,23 +3,38 @@ fail_fast: false
 default_language_version:
   python: python3.11
 repos:
+  - repo: meta
+    hooks:
+      - id: check-hooks-apply
+      - id: check-useless-excludes
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
     hooks:
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+      - id: end-of-file-fixer
       - id: trailing-whitespace
 
-  - repo: https://github.com/pycqa/autoflake
-    rev: v2.3.1
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.3.7
     hooks:
-      - id: autoflake
-        args: ['-r', '--in-place', '--remove-all-unused-imports']
+      - id: ruff
+        args:
+          - --fix
+      - id: ruff-format
 
-  - repo: https://github.com/pycqa/isort
-    rev: 5.13.2
+  - repo: local
     hooks:
-      - id: isort
+      - id: ensure-pyrightconfig
+        name: Make sure pyrightconfig.json exists before running pyright
+        language: system
+        entry: bash -c 'test -f pyrightconfig.json || make pyrightconfig'
+        pass_filenames: false
 
-  - repo: https://github.com/ambv/black
-    rev: 24.4.0
+  - repo: https://github.com/RobertCraigie/pyright-python
+    rev: v1.1.358
     hooks:
-      - id: black
+      - id: pyright

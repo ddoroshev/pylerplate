@@ -17,7 +17,8 @@ jobs:
       - name: Run tests
         run: |
           docker build . --file Dockerfile.test --tag pylerplate-test
-          docker run --rm pylerplate-test make -j2 check test
+          docker run --rm pylerplate-test make test
+          docker run --rm pylerplate-test pre-commit run -a
 
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
