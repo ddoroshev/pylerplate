@@ -22,8 +22,9 @@
       "automerge": true
     },
     {
+      "matchDatasources": ["docker"],
       "matchPackageNames": ["ghcr.io/ddoroshev/pybase"],
-      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-(?<stage>.*)$"
+      "versioning": "loose"
     }
   ]
 }
