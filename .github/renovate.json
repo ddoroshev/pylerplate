@@ -20,6 +20,10 @@
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch",
       "automerge": true
+    },
+    {
+      "matchPackageNames": ["ghcr.io/ddoroshev/pybase"],
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-(?<stage>.*)$"
     }
   ]
 }
