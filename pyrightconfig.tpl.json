@@ -1,0 +1,6 @@
+{
+  "venvPath": "$VIRTUAL_ENV",
+  "venv": ".",
+  "typeCheckingMode": "basic",
+  "exclude": ["tests"]
+}

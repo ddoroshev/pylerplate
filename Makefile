@@ -4,10 +4,11 @@ default: run
 
 .PHONY: init
 init:
-	poetry install -E devtools --no-root
+	poetry install --no-root
 	$(BINDIR)/pre-commit install
 	$(BINDIR)/pre-commit install-hooks
-	make format check test
+	pre-commit run -a
+	make test
 
 .PHONY: clean
 clean:
@@ -33,17 +34,6 @@ cov:
 cov-html:
 	$(BINDIR)/pytest --cov --cov-report=html
 
-.PHONY: flake8
-flake8:
-	$(BINDIR)/flake8
-
-.PHONY: mypy
-mypy:
-	$(BINDIR)/mypy app
-
-.PHONY: check
-check: flake8 mypy
-
-.PHONY: format
-format:
-	$(BINDIR)/pre-commit run -a
+.PHONY: pyrightconfig
+pyrightconfig:
+	@envsubst < pyrightconfig.tpl.json > pyrightconfig.json

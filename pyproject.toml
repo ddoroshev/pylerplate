@@ -26,8 +26,9 @@ optional = true
 
 [tool.poetry.group.local.dependencies]
 ruff = "^0.3.0"
+ipdb = "0.13.13"
 ptipython = "^1.0.1"
-ipython = "^8.14.0"
+pyright = "^1.1.358"
 
 [tool.ruff]
 line-length = 100
@@ -71,10 +72,6 @@ exclude_lines = [
 directory = "htmlcov"
 skip_covered = true
 show_contexts = true
-
-[tool.mypy]
-strict = true
-no_implicit_reexport = true
 
 [build-system]
 requires = ["poetry-core"]
