@@ -8,6 +8,16 @@
     "master",
     "fastapi"
   ],
+  "hostRules": [
+    {
+      "hostType": "docker",
+      "matchHost": "ghcr.io",
+      "username": "ddoroshev",
+      "encrypted": {
+        "password": "wcFMA/xDdHCJBTolARAAjPcIKok/zH9u+5GJIz4YNI8Ed4A76E9VIXvDKD8UxpF1PsyUr0VniE9FridGhh7VhCXuiBaAU8pKzOuNN3gatJ1AnKI/7ii4gp6XO0WaSPgJo1R7r7QBJW6GpmPidT3VqMhbBkvhASxtrI9RNzuNsqHg+a8JYnowur3unn2v8qasKz5EOyFzvLEgvf8Ok7j10cufp+s1Ned5oYuF7grBolLngpQi+qtlUzmpTXSMtenEdngGZpifnWs8ARdB6e3PPQf21Z5IwDkMaCtCJxQcmtLzuIQoowZhPivKx7GzDjMpfI/92/uhy02sV+3ByIgSM7rpR+rRpbypGUJMxcL0BYVSm4KPWmrK/zS1yjjoyaZ/NOC8HT/zUuzToh4arn2CFaMy8TslqrnTB5a9cQMFzQYt07LlcsrvAHP3okue+bulskfUCnLNe37O8siXt85ozEUnAvV7d6imGdHuTI0kHDCdCDulWJ+yjnD0nfTHYLgh6FgQos7DyuynkrHdcNPUhMabZvcRAjmqIrGYd5YWes9AtwMBcuvsZM9rHflw3PJ3HP3PO+r7RYzpQ5Eh6aoHYE7zw6liw7OHcl033iWF29LZRmN6ab5ELFqnP0qCBFCXJjMFh32yMVgui4LGHBmkKtd9RgbwkGdEhiOefvjRA/Qk0Vs+5vUONa7Fdh/auaLSeAE0A2AMxuLkuoo7pSbGHSRdqmRj3XR/H68gE2Os+Pkuk6BQ/bWHLlGC7QAkOruvr3a16xVBksd7348jwAD1Z2+JlfET08FNF102Rs8dNeBcV9QlbyDJ35Zlbj2K6MqnecDwwO7vsRzWbkDtzBXhsWlMMLufzLnLDw"
+      }
+    }
+  ],
   "packageRules": [
     {
       "matchPackagePatterns": [
