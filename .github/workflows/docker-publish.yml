@@ -11,14 +11,81 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      POETRY_VERSION: '1.5.1'
+      PYTHON_VERSION: '3.11.5'
+      PIP_DISABLE_PIP_VERSION_CHECK: 1
+
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run tests
-        run: |
-          docker build . --file Dockerfile.test --tag pylerplate-test
-          docker run --rm pylerplate-test make test
-          docker run --rm pylerplate-test pre-commit run -a
+      - uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          # libcurl4-openssl-dev - for pycurl
+          # gettext-base - for envsubst
+          packages: libcurl4-openssl-dev gettext-base
+          version: 2.0
+
+      - name: Load cached Poetry installation
+        id: cached-poetry
+        uses: actions/cache@v4
+        with:
+          path: ~/.local
+          key: poetry-1
+
+      - name: Install Poetry
+        if: steps.cached-poetry.outputs.cache-hit != 'true'
+        uses: snok/install-poetry@v1
+        with:
+          version: ${{ env.POETRY_VERSION }}
+
+      - name: Ensure `~/.local/bin` is in PATH
+        run: echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: poetry
+          cache-dependency-path: poetry.lock
+
+      - name: Set Poetry environment
+        run: poetry env use $PYTHON_VERSION
+
+      - name: Set VIRTUAL_ENV
+        run: echo "VIRTUAL_ENV=$(poetry env info -p)" >> $GITHUB_ENV
+
+      - run: poetry install --no-root
+
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit-1|${{ env.pythonLocation }}|${{ hashFiles('.pre-commit-config.yaml') }}
+
+      - name: pre-commit
+        run: poetry run pre-commit run -a --show-diff-on-failure --color=always
+
+      - run: |
+          poetry run pytest \
+          --junitxml=pytest.xml \
+          --cov --cov-report=term-missing:skip-covered \
+          2>&1 | tee pytest-cov.txt; exit ${PIPESTATUS[0]}
+        if: ${{ always() }}
+
+      - name: Get Coverage
+        if: ${{ always() }}
+        uses: MishaKav/pytest-coverage-comment@main
+        continue-on-error: true
+        with:
+          junitxml-path: pytest.xml
+          pytest-coverage-path: pytest-cov.txt
+          default-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Uncomment to enable SSH to Actions
+      # - name: Setup upterm session
+      #   uses: lhotari/action-upterm@v1
+      #   if: ${{ failure() }}
 
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
