@@ -34,7 +34,8 @@
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["ghcr.io/ddoroshev/pybase"],
-      "versioning": "loose"
+      "versionCompatibility": "^(?<version>[^-]+)(?<compatibility>-.*)?$",
+      "versioning": "semver"
     }
   ]
 }
