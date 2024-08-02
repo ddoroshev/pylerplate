@@ -6,7 +6,7 @@ authors = ["Dima Doroshev <dima@doroshev.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.12"
-sentry-sdk = "^1.28.1"
+sentry-sdk = "^2.0.0"
 fastapi-utils = "^0.7.0"
 fastapi = "^0.112.0"
 ujson = "^5.8.0"
