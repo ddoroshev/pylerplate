@@ -12,7 +12,6 @@
     {
       "hostType": "docker",
       "matchHost": "ghcr.io",
-      "username": "ddoroshev",
       "encrypted": {
         "password": "wcFMA/xDdHCJBTolARAAhgSdH14j2drxWqEz6CIrAe5BQJ8G1cYUmWVoM8RCyD2beESuFKcsNWqbr1Rrk5X1qzIApmGLCm25ECGzKNOK8A3AfzF+uy8fUPXxA3lEBLw3ofFZVLfGQ9UD0T8rYieWyH8VLtcSFwV+NJDnpqKveyQtFT3Nyw+6wFab2VBPzpgAF75cg9XgRDa3kV4ElrnkN1Soye4VS7CbU1YWLsdELM/M0+hyw25uQGFC1V36wzl5EVJEHyjjJsqXezlgZ6HmHijPrMXSS/t5cCPcQHJZ45K8+7rlwAytJ+2xIf8RvzUoyiAPx7KrAyuIFpjeM7nauCdyZfhhKz3JJoKS8hqw/jS0xw1U9ULlmTsVYQkgQ09Ek6v2DMGlAlgEbAvXlWBS6k6/DstE54OKCTzAmY11tZtHPVEBYUuc4DFMOUiWEwzVq8znDIATwwyVrExm0RbGSxyWcMVYpTu9lhgvcKLkvgYZOJ5iTNcw6kAGnKsGfpA0it1p2QfM0OzL4SRCGIS2vEfAyKKHaALcweYEU/vINQJwW0fpZB+nkxh6dfMGSLC4DVcUXYG+Tg+kyYYeKvkT2j3flT02QiGruSEz+ZmFPd1nD9TyCascj+8p/sJC2NMDEZvkJ7ygoF0SGuqccUU/baSHYq9NP6y2nTZbqnyZYP3JbZOm7lQVIAb/m9vh4RXSeAGcbfHEnAbcYu7yWuoCXjyaQVZmtudf+R+ektIWSK7PG1yrps4nFZg7P4G5CHtK4JWwsmktR07Orv41AXcN18W7KcTcc5/VMpvLBF4Mm4rjaIPYR90CMtUaxSle5jzH84E7pMcR1sZNCxy9zXl67LGUpGkl1Qw7wA"
       }
