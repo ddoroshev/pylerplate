@@ -25,7 +25,7 @@
       ],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch",
-      "automerge": false
+      "automerge": true
     },
     {
       "matchDatasources": ["docker"],
