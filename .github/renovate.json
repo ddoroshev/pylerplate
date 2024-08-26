@@ -11,10 +11,7 @@
   "hostRules": [
     {
       "hostType": "docker",
-      "matchHost": "ghcr.io",
-      "encrypted": {
-        "password": "wcFMA/xDdHCJBTolAQ/+OsIwtxiBoy88LzrNoa7VhJFTncflmdxQSzoBKs/wS2BU8tjCNs4HtMohYeyooxrzIe2Glrk4mR4KxyOc4rl+C+Vmou/hzrzTqmukP2fHWmQ+R0OoozBJFuW0XbFAhcHXaAozLDC+Px5yxHWYIKRyKWrDjMhURM+FCjQHpTVCcBY2Oh0iDRJ0N4fu/dDWq8OziDqcOmmXFmOxHzpqp8DuhSIBm8TJH+eTzQ6YO7sXLZQpm7qbncf1o5y2hNRM14+WbwM8dtH/7/z86bXY4DF7bjOTZ4e1L2IflY1Zht/7YHTDJrOLdoNFujZH2eosg5MYtNhcRssiXO8WSlJrbAGWbl/OqjKck3xtqgzN3Seait9xbTO/auuBEGgIvkgunHCOhZ84fDPhCJidFMTaI3mHwjHq0wIyai9bbl+efiT9WIy+bJOArc2OJCcU9Vy0z0zrSwbtIZg4wQpB9cpGBq3VetL/cwqHrsWrlFnB0d/d6QWTJnGsw7ENs5wxrR4TCokXCn7mlQzzJAMdCffkAX6i1cXvRqYFoU8Yf799ZzEW+sHYEmDp9Oqj7P791U8yg607PlLkdfe+8oe/xadpWxFmGiNHEhpMb3+N8YcWNPlApFEP+ZtaJmkNg61TeqJGvty3mxS1J1Myi+xC5x+PDIJoXWXI+7Irg3hQsyo+G6aNCGTSeAGdb5dEFsQ8/dX6Ju5sPAJYUsM6aIxzakKPS9njA8PN1wgtqBU2mjIFMwDM+wTKkU+qGAGwvWM++qzbPaPB0vxSPQNJj96d1J7/YNiVL0zkgoiEe6qi0fozUVlKr7DqsIoK75gasaPINoNRKiNQpJvS/bxdQgT9XA"
-      }
+      "matchHost": "ghcr.io"
     }
   ],
   "packageRules": [
