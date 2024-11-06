@@ -35,6 +35,6 @@ repos:
         pass_filenames: false
 
   - repo: https://github.com/RobertCraigie/pyright-python
-    rev: v1.1.387
+    rev: v1.1.388
     hooks:
       - id: pyright
