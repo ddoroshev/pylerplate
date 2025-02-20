@@ -19,7 +19,7 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.9.3
+    rev: v0.9.7
     hooks:
       - id: ruff
         args:
@@ -35,6 +35,6 @@ repos:
         pass_filenames: false
 
   - repo: https://github.com/RobertCraigie/pyright-python
-    rev: v1.1.392
+    rev: v1.1.394
     hooks:
       - id: pyright
